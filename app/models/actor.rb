@@ -4,12 +4,10 @@ class Actor < ActiveRecord::Base
 
   def full_name
     "#{self.first_name}  #{self.last_name}"
-    actor.save
-    actor
   end
 
   def list_roles
-    self.characters.collect{|c| c.name}
+    self.characters.collect{|c| "#{c.name} - #{c.show.name}}
   end
 
 end
